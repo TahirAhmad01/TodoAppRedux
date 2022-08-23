@@ -4,6 +4,7 @@
     "CLEARCOMPLETED",
     "COLORCHANGED",
     "COLORSELECTED",
-    "STATUSCHANGED"
+    "STATUSCHANGED",
+    "todos"
   ]
 }

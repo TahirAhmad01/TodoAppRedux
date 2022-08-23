@@ -6,14 +6,14 @@ import {
   DELETED,
   TOGGLED,
 } from "./actionTypes";
-import { initialState } from "./initialState";
+import initialState from "./initialState";
 
 const nextTodo = (todos) => {
   const maxTodo = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), 0);
   return maxTodo + 1;
 };
 
-export const todoReducer = (state = initialState, action) => {
+const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADDED:
       return [
@@ -44,7 +44,7 @@ export const todoReducer = (state = initialState, action) => {
         }
 
         return {
-          ...state,
+          ...todo,
           color: color,
         };
       });
@@ -66,6 +66,8 @@ export const todoReducer = (state = initialState, action) => {
       });
 
     default:
-      break;
+      return state;
   }
 };
+
+export default todoReducer;
